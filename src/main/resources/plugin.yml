@@ -1,0 +1,6 @@
+name: BasePlugin
+version: '${project.version}'
+main: me.guruguru19.BasePlugin
+api-version: 1.18
+authors: [ GuruGuru19 ]
+description: a plugin with bases and tp spots
