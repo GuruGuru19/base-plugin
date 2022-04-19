@@ -40,10 +40,61 @@
                         </goals>
                         <configuration>
                             <createDependencyReducedPom>false</createDependencyReducedPom>
+
+                            <minimizeJar>true</minimizeJar>
+                            <relocations>
+                                <relocation>
+                                    <pattern>me.border.utilities</pattern>
+                                    <shadedPattern>me.guruguru19.baseplugin.shaded.utilities</shadedPattern>
+                                </relocation>
+                                <relocation>
+                                    <pattern>me.border.spigotutilities</pattern>
+                                    <shadedPattern>me.guruguru19.baseplugin.shaded.spigotutilites</shadedPattern>
+                                </relocation>
+                            </relocations>
+
                         </configuration>
                     </execution>
                 </executions>
             </plugin>
+
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>3.2.0</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.2.0</version>
+                <configuration>
+                    <additionalOptions>
+                        <additionalOption>-Xdoclint:none</additionalOption>
+                    </additionalOptions>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+
+
         </plugins>
         <resources>
             <resource>
@@ -62,6 +113,12 @@
             <id>sonatype</id>
             <url>https://oss.sonatype.org/content/groups/public/</url>
         </repository>
+
+        <repository>
+            <id>spigotutilities.read</id>
+            <url>https://mymavenrepo.com/repo/g7imMuJgcL33EBRf9yJJ/</url>
+        </repository>
+
     </repositories>
 
     <dependencies>
@@ -70,6 +127,12 @@
             <artifactId>paper-api</artifactId>
             <version>1.18.1-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>me.border</groupId>
+            <artifactId>SpigotUtilities</artifactId>
+            <version>3.9</version>
         </dependency>
     </dependencies>
 </project>

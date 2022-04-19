@@ -1,4 +1,4 @@
-package me.guruguru19.Commands;
+package me.guruguru19.baseplugin.Commands;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandException;

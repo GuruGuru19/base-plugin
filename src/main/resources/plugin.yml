@@ -1,6 +1,10 @@
 name: BasePlugin
 version: '${project.version}'
-main: me.guruguru19.BasePlugin
+main: me.guruguru19.baseplugin.BasePlugin
 api-version: 1.18
 authors: [ GuruGuru19 ]
 description: a plugin with bases and tp spots
+
+commands:
+  tphome:
+  tpto:

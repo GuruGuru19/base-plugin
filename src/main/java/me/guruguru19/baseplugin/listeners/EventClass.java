@@ -1,4 +1,4 @@
-package me.guruguru19.listeners;
+package me.guruguru19.baseplugin.listeners;
 
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;

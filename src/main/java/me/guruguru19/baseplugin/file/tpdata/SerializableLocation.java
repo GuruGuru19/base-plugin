@@ -1,4 +1,4 @@
-package me.guruguru19.file.tpdata;
+package me.guruguru19.baseplugin.file.tpdata;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
@@ -36,7 +36,7 @@ public class SerializableLocation implements Serializable {
         return z;
     }
 
-    public double getZPitch() {
+    public double getPitch() {
         return pitch;
     }
 
