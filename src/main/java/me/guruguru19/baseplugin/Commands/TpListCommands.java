@@ -1,5 +1,6 @@
 package me.guruguru19.baseplugin.Commands;
 
+import me.border.utilities.scheduler.AsyncTasker;
 import me.guruguru19.baseplugin.BasePlugin;
 import me.guruguru19.baseplugin.file.tpdata.SerializableLocation;
 import org.bukkit.ChatColor;
@@ -75,12 +76,14 @@ public class TpListCommands extends CommandException implements Listener, Comman
                 }
                 tpList.remove(args[1]);
                 tpList.put(args[1], new SerializableLocation(player.getLocation()));
+                saveData();
                 player.sendMessage(ChatColor.WHITE + "New Tp '"+ChatColor.GOLD+args[1]+ChatColor.WHITE+"' added to you tp list");
                 return true;
             }
             if (args[0].equals("remove")){
                 if (tpList.containsKey(args[1])){
                     tpList.remove(args[1]);
+                    saveData();
                     player.sendMessage(ChatColor.WHITE + "Tp '"+ChatColor.GOLD+args[1]+ChatColor.WHITE+"' removed from your tp list");
                     return true;
                 }
@@ -90,5 +93,9 @@ public class TpListCommands extends CommandException implements Listener, Comman
         }
         player.sendMessage(ChatColor.RED+ "Invalid Input... try '/tplist help')");
         return false;
+    }
+
+    private void saveData(){
+        AsyncTasker.runTaskAsync(new Thread(() -> BasePlugin.tpListData.save()));
     }
 }
