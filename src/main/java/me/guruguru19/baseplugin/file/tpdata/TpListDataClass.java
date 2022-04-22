@@ -7,11 +7,11 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.UUID;
 
-public class TpDataClass extends AbstractSerializedFile<HashMap<UUID, HashMap<String, SerializableLocation>>> {
+public class TpListDataClass extends AbstractSerializedFile<HashMap<UUID, HashMap<String, SerializableLocation>>> {
 
-    public static TpDataClass INSTANCE = new TpDataClass();
 
-    private TpDataClass() {
+
+    public TpListDataClass() {
         super("tp_to_data", new File(BasePlugin.instance.getDataFolder()+File.separator +"/DATA"), new HashMap<>());
         setup();
     }

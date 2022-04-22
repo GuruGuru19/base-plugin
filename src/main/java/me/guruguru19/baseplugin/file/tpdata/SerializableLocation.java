@@ -51,4 +51,13 @@ public class SerializableLocation implements Serializable {
     public Location toLocation(){
         return new Location(Bukkit.getWorld(this.world), this.x, this.y, this.z, this.yaw, this.pitch);
     }
+
+    @Override
+    public String toString() {
+        return "at" +
+                "x=" + ((int)x) +
+                ", y=" + ((int)y) +
+                ", z=" + ((int)z) +
+                " ("+ world +")";
+    }
 }

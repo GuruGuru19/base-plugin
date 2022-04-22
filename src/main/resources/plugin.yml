@@ -7,4 +7,4 @@ description: a plugin with bases and tp spots
 
 commands:
   tphome:
-  tpto:
+  tplist:
